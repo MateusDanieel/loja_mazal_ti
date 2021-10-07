@@ -1,0 +1,225 @@
+.sec-header {
+    padding: 20px 0;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .btn-menu-toggle {
+        border: 0;
+        background-color: transparent;
+        outline: none;
+        margin-right: 20px;
+        padding: 0;
+        display: none;
+
+        @media (--lg) {
+            display: block;
+        }
+    }
+
+    .logo {
+        width: 100%;
+        max-width: 150px;
+        margin-right: auto;
+    }
+
+    .opts {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        li {
+            margin: 0 0 0 40px;
+
+            &.item {
+                a {
+                    opacity: .2;
+                    transition: 0.3s;
+
+                    i {
+                        color: $black;
+                    }
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &.search {
+                position: relative;
+
+                @media (--xs) {
+                    display: none;
+                }
+
+                input {
+                    border: 0;
+                    border-bottom: 2px solid rgba($black, .2);
+                    border-radius: 0;
+                    outline: none;
+                    padding: 6px 24px 6px 6px;
+                    transition: 0.3s;
+                    font-style: italic;
+                    color:rgba($black, .6);
+
+                    &:focus {
+                        border-bottom: 2px solid rgba($black, 1);
+                    }
+
+                    &:focus + button {
+                        opacity: .4;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+
+                    &::placeholder {
+                        color:rgba($black, .4);
+                    }
+                }
+
+                button {
+                    position: absolute;
+                    right: 0;
+                    top: 6px;
+                    border: 0;
+                    outline: none;
+                    background-color: transparent;
+                    cursor: pointer;
+                    opacity: .2;
+                    transition: 0.3s;
+                }
+            }
+
+        }
+    }
+
+}
+
+.sec-navbar-menu {
+    
+    .menu {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        @media (--lg) {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba($black, .9);
+            min-height: 100%;
+            width: 300px;
+            margin-left: -300px;
+            transition: 0.3s;
+
+            &.active {
+                margin-left: 0;
+            }
+        }
+
+        li {
+
+            &.toggle {
+                display: none;
+                align-items: center;
+                justify-content: flex-end;
+
+                button {
+                    border: 0;
+                    background-color: transparent;
+                    color: $white;
+                    padding: 20px;
+                }
+
+                @media (--lg) {
+                    display: flex;
+                }
+            }
+
+            &.search {
+                position: relative;
+                padding: 0 20px 20px;
+                display: none;
+
+                @media (--lg) {
+                    display: block;
+                }
+
+                input {
+                    width: 100%;
+                    border: 0;
+                    border-bottom: 2px solid rgba($white, .6);
+                    border-radius: 0;
+                    outline: none;
+                    padding: 12px 24px 12px 6px;
+                    transition: 0.3s;
+                    font-style: italic;
+                    color: rgba($white, .6);
+                    background-color: transparent;
+
+                    &:focus {
+                        border-bottom: 2px solid rgba($white, 1);
+                    }
+
+                    &:focus + button {
+                        opacity: 1;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+
+                    &::placeholder {
+                        color:rgba($white, .6);
+                    }
+                }
+
+                button {
+                    position: absolute;
+                    right: 20px;
+                    top: 12px;
+                    border: 0;
+                    outline: none;
+                    background-color: transparent;
+                    cursor: pointer;
+                    opacity: .6;
+                    transition: 0.3s;
+                    color: $white;
+                }
+            }
+
+            &.item > a {
+                display: block;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: 300;
+                padding: 10px 30px;
+                color: $black;
+                transition: 0.3s;
+
+                &:hover {
+                    background-color: $black;
+                    color: $white;
+                }
+
+                @media (--lg) {
+                    color: $white;
+                    padding: 20px;
+
+                    &:hover {
+                        background-color: transparent;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
